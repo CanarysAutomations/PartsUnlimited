@@ -34,6 +34,6 @@ steps:
     configuration: '$(buildConfiguration)'
 - task: AzureRmWebAppDeployment@4
   inputs:
-    ConnectedServiceName: 'Visual Studio Enterprise(5ae35b9e-9571-4a30-8426-62c1ba3394c4)'
+    ConnectedServiceName: ''
     WebAppName: 
     Package: '$(build.artifactstagingdirectory)/*.zip'
