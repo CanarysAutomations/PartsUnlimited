@@ -64,16 +64,13 @@ stages:
      - task: IISWebAppManagementOnMachineGroup@0
        displayName: 'Manage IISWebsite'
        inputs:
-         WebsiteName: pulextra
-         WebsitePhysicalPathAuth: WebsiteWindowsAuth
-         WebsiteAuthUserName: 'CANARYS\grenstong'
-         WebsiteAuthUserPassword: 'poompatta#123'
+         WebsiteName: pulyaml
          AddBinding: true
-         Bindings: '{"bindings":[{"protocol":"http","ipAddress":"All Unassigned","port":"8095","hostname":"","sslThumbprint":"","sniFlag":false}]}'
+         Bindings: '{"bindings":[{"protocol":"http","ipAddress":"All Unassigned","port":"6978","hostname":"","sslThumbprint":"","sniFlag":false}]}'
          CreateOrUpdateAppPoolForWebsite: true
-         AppPoolNameForWebsite: pulextra
+         AppPoolNameForWebsite: pulyaml
          AppPoolIdentityForWebsite: NetworkService
-    
+     
      - task: IISWebAppDeploymentOnMachineGroup@0
        displayName: 'Deploy IIS Website/App: '
        inputs:
