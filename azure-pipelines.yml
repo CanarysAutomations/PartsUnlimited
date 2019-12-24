@@ -53,7 +53,7 @@ stages:
    jobs:
    - job: Deploy
      pool:
-       name: 'Default'
+       name: 'GrenP'
 
      steps:
      - task: DownloadPipelineArtifact@2
