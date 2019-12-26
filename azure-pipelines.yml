@@ -55,6 +55,8 @@ stages:
    - job: Deploy
      pool:
        name: 'GrenP'
+       
+     environment: deploy
      
      steps:
      - task: DownloadPipelineArtifact@2
@@ -78,5 +80,4 @@ stages:
          WebSiteName: 'pulyaml'
          Package: '$(Pipeline.Workspace)\**\*.zip'
          
-   environment: deploy
     
