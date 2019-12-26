@@ -3,7 +3,7 @@
 # Multistage used to deploy to test and production environment in localmachine, IIS Server
 
 trigger:
-- master
+- none
 
 stages:
  - stage: Build
@@ -13,7 +13,7 @@ stages:
        vmImage: 'VS2017-Win2016'
 
      variables:
-       group: build-vars 
+       - group: build-vars 
        #solution: '**/*.sln'
        #buildPlatform: 'Any CPU'
        #buildConfiguration: 'Release'
