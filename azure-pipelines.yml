@@ -50,13 +50,12 @@ stages:
          PathtoPublish: '$(build.artifactstagingdirectory)'
 
  - stage: Deploy
-   environment: deploy
-
+   
    jobs:
    - job: Deploy
      pool:
        name: 'GrenP'
-
+     
      steps:
      - task: DownloadPipelineArtifact@2
        inputs:
@@ -78,4 +77,6 @@ stages:
        inputs:
          WebSiteName: 'pulyaml'
          Package: '$(Pipeline.Workspace)\**\*.zip'
+         
+   environment: deploy
     
