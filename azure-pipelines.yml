@@ -1,7 +1,6 @@
-# ASP.NET
-# Build and test ASP.NET projects.
-# Add steps that publish symbols, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+# Pipeline By Grenston George
+# Used to build, test, and deploy PartsUnlimitted ASP.net website
+# Multistage used to deploy to test and production environment in localmachine, IIS Server
 
 trigger:
 - master
