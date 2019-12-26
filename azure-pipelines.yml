@@ -74,5 +74,5 @@ stages:
      - task: IISWebAppDeploymentOnMachineGroup@0
        displayName: 'Deploy IIS Website/App: '
        inputs:
-         WebSiteName: 'pulextra'
+         WebSiteName: 'pulyaml'
          Package: '$(Pipeline.Workspace)\**\*.zip'
