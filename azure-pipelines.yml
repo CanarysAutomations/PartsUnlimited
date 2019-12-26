@@ -56,7 +56,7 @@ stages:
      pool:
        name: 'GrenP'
        
-     environment: deploy
+     environment: 'deploy'
      
      steps:
      - task: DownloadPipelineArtifact@2
