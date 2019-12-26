@@ -52,6 +52,9 @@ stages:
  - stage: DeployToTest
    jobs:
    - job: DeployToTest
+     pool:
+       name: 'GrenP'
+
      steps:
        - task: DownloadPipelineArtifact@2
          inputs:
