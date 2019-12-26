@@ -3,7 +3,7 @@
 # Multistage used to deploy to test and production environment in localmachine, IIS Server
 
 trigger:
-- none
+- master
 
 stages:
  - stage: Build
@@ -14,9 +14,6 @@ stages:
 
      variables:
        - group: build-vars 
-       #solution: '**/*.sln'
-       #buildPlatform: 'Any CPU'
-       #buildConfiguration: 'Release'
 
      steps:
      - task: NuGetToolInstaller@0
@@ -84,7 +81,6 @@ stages:
        name: 'GrenP'
        
      environment: 'production'
-
      strategy:
       runOnce:
         deploy:
