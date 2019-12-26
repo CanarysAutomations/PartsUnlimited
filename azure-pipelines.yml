@@ -52,32 +52,35 @@ stages:
  - stage: Deploy
    
    jobs:
-   - job: Deploy
+   - deployment: Deploy
      pool:
        name: 'GrenP'
        
      environment: 'deploy'
-     
-     steps:
-     - task: DownloadPipelineArtifact@2
-       inputs:
-         source: 'current'
-         path: '$(Pipeline.Workspace)'
 
-     - task: IISWebAppManagementOnMachineGroup@0
-       displayName: 'Manage IISWebsite'
-       inputs:
-         WebsiteName: pulyaml
-         AddBinding: true
-         Bindings: '{"bindings":[{"protocol":"http","ipAddress":"All Unassigned","port":"6978","hostname":"","sslThumbprint":"","sniFlag":false}]}'
-         CreateOrUpdateAppPoolForWebsite: true
-         AppPoolNameForWebsite: pulyaml
-         AppPoolIdentityForWebsite: NetworkService
+     strategy:
+      runOnce:
+        deploy:
+         steps:
+         - task: DownloadPipelineArtifact@2
+           inputs:
+             source: 'current'
+             path: '$(Pipeline.Workspace)'
+
+         - task: IISWebAppManagementOnMachineGroup@0
+           displayName: 'Manage IISWebsite'
+           inputs:
+             WebsiteName: pulyaml
+             AddBinding: true
+             Bindings: '{"bindings":[{"protocol":"http","ipAddress":"All Unassigned","port":"6978","hostname":"","sslThumbprint":"","sniFlag":false}]}'
+             CreateOrUpdateAppPoolForWebsite: true
+             AppPoolNameForWebsite: pulyaml
+             AppPoolIdentityForWebsite: NetworkService
      
-     - task: IISWebAppDeploymentOnMachineGroup@0
-       displayName: 'Deploy IIS Website/App: '
-       inputs:
-         WebSiteName: 'pulyaml'
-         Package: '$(Pipeline.Workspace)\**\*.zip'
+         - task: IISWebAppDeploymentOnMachineGroup@0
+           displayName: 'Deploy IIS Website/App: '
+           inputs:
+             WebSiteName: 'pulyaml'
+             Package: '$(Pipeline.Workspace)\**\*.zip'
          
     
