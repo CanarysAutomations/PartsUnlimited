@@ -15,6 +15,6 @@ jobs:
       with:
        version: 2.2.104
     - name: Build with .NET
-      run: dotnet build **/*.sln --configuration release 
+      run: dotnet build PartsUnlimited-aspnet45/PartsUnlimited.sln --configuration release 
 
 
