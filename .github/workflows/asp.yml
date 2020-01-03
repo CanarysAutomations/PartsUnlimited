@@ -6,15 +6,9 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2.0.0            
-    - name: Setup NuGet.exe for use with actions
-      uses: NuGet/setup-nuget@v1.0.2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1.0.0
+    - uses: actions/checkout@master
+    - uses: actions/setup-dotnet@v1
       with:
-       version: 2.2.104
-    - name: Build with .NET
-      run: dotnet build PartsUnlimited-aspnet45/PartsUnlimited.sln --configuration release 
-
+       dotnet-version: '3.1.100' 
+    - run: dotnet build PartsUnlimited/PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite
 
