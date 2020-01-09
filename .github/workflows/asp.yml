@@ -15,10 +15,10 @@ jobs:
      
       - name: Install Package
         run: |
-          cd .\PartsUnlimited-aspnet45
-          Install-Package Microsoft.DependencyValidation.Analyzers -Version 0.10.0
-          #dotnet add PartsUnlimitedWebsite package Install-Package Microsoft.DependencyValidation.Analyzers --version 0.10.0
-          cd ..
+          cd .\PartsUnlimited-aspnet45\src\PartsUnlimitedWebsite
+          
+          dotnet add PartsUnlimitedWebsite package Install-Package Microsoft.DependencyValidation.Analyzers --version 0.10.0
+          cd ..\..\..
       - name: BuildApp  
         run: |
          Get-Content -Path .\PartsUnlimited-aspnet45\PartsUnlimited.sln
