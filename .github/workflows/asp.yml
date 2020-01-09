@@ -6,9 +6,12 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-dotnet@v1
-      with:
-       dotnet-version: '3.1.100' 
-    - run: dotnet build PartsUnlimited-aspnet45/PartsUnlimited.sln /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(GITHUB_WORKSPACE)"
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup
+        uses: actions/setup-dotnet@v1
+        with:
+         dotnet-version: '3.1.100' 
+      - name: BuildApp  
+        run: dotnet build PartsUnlimited-aspnet45/PartsUnlimited.sln /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{env:GITHUB_WORKSPACE}}"
 
