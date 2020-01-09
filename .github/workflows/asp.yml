@@ -16,7 +16,7 @@ jobs:
       - name: Install Package
         run: |
           cd .\PartsUnlimited-aspnet45
-          dotnet add PartsUnlimited package Microsoft.DependencyValidation.Analyzers --version 0.10.0
+          dotnet add PartsUnlimited Install-Package Microsoft.DependencyValidation.Analyzers --version 0.10.0
           cd ..
       - name: BuildApp  
         run: |
