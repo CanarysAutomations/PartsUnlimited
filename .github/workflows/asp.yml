@@ -14,7 +14,10 @@ jobs:
          dotnet-version: '3.1.100' 
      
       - name: Install Package
-        run: dotnet add package Microsoft.DependencyValidation.Analyzers --version 0.10.0
+        run: |
+          cd .\PartsUnlimited-aspnet45
+          dotnet add package Microsoft.DependencyValidation.Analyzers --version 0.10.0
+          cd ..
       - name: BuildApp  
         run: |
          Get-Content -Path .\PartsUnlimited-aspnet45\PartsUnlimited.sln
