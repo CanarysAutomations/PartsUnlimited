@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -13,13 +13,8 @@ jobs:
         with:
          dotnet-version: '3.1.100' 
      
-      - name: Install Package
-        run: |
-          cd .\PartsUnlimited-aspnet45\src\PartsUnlimitedWebsite
-          
-          dotnet add PartsUnlimitedWebsite.csproj package Microsoft.DependencyValidation.Analyzers --version 0.10.0
-          cd ..\..\..
-      - name: BuildApp  
+     
+      - name: BuildApp 
         run: |
          Get-Content -Path .\PartsUnlimited-aspnet45\PartsUnlimited.sln
          dotnet restore .\PartsUnlimited-aspnet45\PartsUnlimited.sln
