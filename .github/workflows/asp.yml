@@ -15,5 +15,6 @@ jobs:
       - name: BuildApp
         working-directory: PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite
         run: |
+          dir
           msbuild PartsUnlimitedWebsite.csproj /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true 
-          ls
+          dir
