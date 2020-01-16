@@ -4,19 +4,16 @@ on: [push]
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: [windows,x64]
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Setup
-        uses: actions/setup-dotnet@v1
-        with:
-         dotnet-version: '3.1.100' 
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1.4.0 
      
      
-      - name: BuildApp 
+      - name: BuildApp
         run: |
-         Get-Content -Path .\PartsUnlimited-aspnet45\PartsUnlimited.sln
-         dotnet restore .\PartsUnlimited-aspnet45\PartsUnlimited.sln
-         dotnet build .\PartsUnlimited-aspnet45\PartsUnlimited.sln /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$env:GITHUB_WORKSPACE"
-
+         cd PartsUnlimited\PartsUnlimited-aspnet45\src\PartsUnlimitedWebsite
+         msbuild PartsUnlimitedWebsite.csproj /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true 
+         ls
