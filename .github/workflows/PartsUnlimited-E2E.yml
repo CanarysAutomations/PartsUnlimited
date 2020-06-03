@@ -1,6 +1,14 @@
 name: End2End Workflow
 
-on: [push]
+on: 
+  push: 
+    branches: [master]
+
+env:
+  SOURCE_FOLDER: PartsUnlimited-aspnet45
+  SLN_FILE: PartsUnlimited.sln
+  PACKAGE_TEMP_PATH: Content\D_C\a\PartsUnlimited\PartsUnlimited\PartsUnlimited-aspnet45\src\PartsUnlimitedWebsite\obj\Release\Package\PackageTmp
+  WEB_APP_NAME: pulgithub
 
 jobs:
   build:
@@ -17,33 +25,32 @@ jobs:
           vs-version: 16.4
       - name: NuGet restore
         run: nuget restore
-        working-directory: PartsUnlimited-aspnet45
+        working-directory: ${{env.SOURCE_FOLDER}}
       - name: BuildApp
         run: |
-          msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:TransformWebConfigEnabled=False /p:AutoParameterizationWebConfigConnectionStrings=False /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{github.workspace}}\stagingdir"
-      - name: Upload a Build Artifact
+          msbuild ${{env.SLN_FILE}} /p:TransformWebConfigEnabled=False /p:AutoParameterizationWebConfigConnectionStrings=False /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{github.workspace}}\stagingdir"
+        working-directory: ${{env.SOURCE_FOLDER}}
+      - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
         with:
           name: drop
           path: stagingdir
   deploy:
-    name: DEPLOY TO AZURE APP SERVICES
+    name: DEPLOY TO AZURE WEB APP
     runs-on: windows-latest
     needs: [build]
     steps:
-      - name: Download a Build Artifact
+      - name: Download Build Artifact
         uses: actions/download-artifact@v2
         with:
           name: drop
           path: ${{github.workspace}}
-      - run: expand-archive -path 'PartsUnlimitedWebsite.zip' -destinationpath '.\webapp'
+      - name: Extract Artifact 
+        run: expand-archive -path '*.zip' -destinationpath '.\webapp'
         shell: pwsh
-#      - uses: montudor/action-zip@v0.1.0
-#        with:
-#         args: unzip -qq PartsUnlimitedWebsite.zip -d ./webapp
-      - name: Azure WebApp
+      - name: Azure WebApp Deploy
         uses: Azure/webapps-deploy@v2
         with:
-          app-name: pulgithub
-          publish-profile: ${{secrets.pulpublishsettings}}
-          package: webapp/Content/D_C/a/PartsUnlimited/PartsUnlimited/PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/obj/Release/Package/PackageTmp
+          app-name: ${{env.WEB_APP_NAME}}
+          publish-profile: ${{secrets.WEB_APP_PUBLISH_PROFILE}}
+          package: webapp\${{env.PACKAGE_TEMP_PATH}}
