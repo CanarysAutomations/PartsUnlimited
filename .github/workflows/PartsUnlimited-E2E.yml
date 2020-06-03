@@ -28,7 +28,7 @@ jobs:
           path: stagingdir
   deploy:
     name: DEPLOY TO AZURE APP SERVICES
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: [build]
     steps:
       - name: Download a Build Artifact
