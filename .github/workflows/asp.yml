@@ -15,7 +15,6 @@ jobs:
         with:
           vs-version: 16.4
       - run: |
-          cd {{env:GITHUB_WORKSPACE}}
           mkdir stagingdir
       - name: NuGet restore
         run: |
@@ -23,13 +22,11 @@ jobs:
           nuget restore PartsUnlimited.sln
       - name: BuildApp
         run: |
-          msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$workspace\stagingdir"
+          msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation=$artifactdirectory
         env:
-          workspace: GITHUB_WORKSPACE
+          artifactdirectory: ${{github.workspace}}\stagingdir
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
           name: drop
-          path: $workspace\stagingdir
-        env:
-          workspace: GITHUB_WORKSPACE
+          path: .\stagingdir
