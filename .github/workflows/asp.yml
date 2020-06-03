@@ -8,13 +8,12 @@ jobs:
     steps:
       - name: Setup NuGet.exe for use with actions
         uses: NuGet/setup-nuget@v1.0.2
-      - run: nuget restore
-        working-directory: PartsUnlimited-aspnet45
+      - run: nuget restore PartsUnlimited-aspnet45\PartsUnlimited.sln
       - name: create staging
         run: mkdir stagingdir
       - name: BuildApp
         run: |
-          msbuild PartsUnlimited-aspnet45/PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation=stagingdir
+          msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation=stagingdir
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
