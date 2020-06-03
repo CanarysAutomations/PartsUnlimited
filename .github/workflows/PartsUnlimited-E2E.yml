@@ -5,9 +5,8 @@ on:
     branches: [master]
 
 env:
-  SOURCE_FOLDER: PartsUnlimited-aspnet45
   SLN_FILE: PartsUnlimited.sln
-  PACKAGE_TEMP_PATH: Content\D_C\a\PartsUnlimited\PartsUnlimited\PartsUnlimited-aspnet45\src\PartsUnlimitedWebsite\obj\Release\Package\PackageTmp
+  PACKAGE_TEMP_PATH: Content\D_C\a\PartsUnlimited\PartsUnlimited\src\PartsUnlimitedWebsite\obj\Release\Package\PackageTmp
   WEB_APP_NAME: pulgithub
 
 jobs:
@@ -21,15 +20,11 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.2
       - name: Setup MSbuild
         uses: microsoft/setup-msbuild@v1
-        with:
-          vs-version: 16.4
       - name: NuGet restore
         run: nuget restore
-        working-directory: ${{env.SOURCE_FOLDER}}
       - name: BuildApp
         run: |
           msbuild ${{env.SLN_FILE}} /p:TransformWebConfigEnabled=False /p:AutoParameterizationWebConfigConnectionStrings=False /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{github.workspace}}\stagingdir"
-        working-directory: ${{env.SOURCE_FOLDER}}
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
         with:
