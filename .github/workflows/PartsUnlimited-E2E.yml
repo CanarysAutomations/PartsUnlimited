@@ -21,7 +21,7 @@ jobs:
       - name: BuildApp
         run: |
           dotnet build --configuration Release
-          dotnet publish -c Release -o '${{github.workspace}}\stagingdir
+          dotnet publish -c Release -o '${{github.workspace}}\stagingdir'
         working-directory: PartsUnlimited-aspnet45
 #          msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{github.workspace}}\stagingdir"
       - name: Upload a Build Artifact
