@@ -38,7 +38,7 @@ jobs:
           path: ${{github.workspace}}
       - uses: montudor/action-zip@v0.1.0
         with:
-         args: unzip -qq PartUnlimitedWebsite.zip -d ./webapp
+         args: unzip -qq PartsUnlimitedWebsite.zip -d ./webapp
       - name: Azure WebApp
         uses: Azure/webapps-deploy@v2
         with:
