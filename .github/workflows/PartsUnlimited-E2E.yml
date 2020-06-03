@@ -1,25 +1,23 @@
-name: ASPBuild
+name: End2End Workflow
 
 on: [push]
 
 jobs:
   build:
+    name: BUILD USING VS2019
     runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2.2.0
       - name: Setup NuGet.exe
         uses: NuGet/setup-nuget@v1.0.2
-      - name: setup-msbuild
+      - name: Setup MSbuild
         uses: microsoft/setup-msbuild@v1
         with:
           vs-version: 16.4
-      - run: |
-          mkdir stagingdir
       - name: NuGet restore
-        run: |
-          cd PartsUnlimited-aspnet45
-          nuget restore PartsUnlimited.sln
+        run: nuget restore PartsUnlimited.sln
+        working-directory: PartsUnlimited-aspnet45
       - name: BuildApp
         run: |
           msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{github.workspace}}\stagingdir"
@@ -28,3 +26,6 @@ jobs:
         with:
           name: drop
           path: stagingdir
+#  deploy:
+#    name: DEPLOY TO AZURE APP SERVICES
+#    runs-on: windows-latest
