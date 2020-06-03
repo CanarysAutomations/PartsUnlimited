@@ -44,4 +44,4 @@ jobs:
         with:
           app-name: pulgithub
           publish-profile: ${{secrets.pulpublishsettings}}
-          package: PartsUnlimitedWebsite.zip
+          package: webapp/Content/D_C/a/PartsUnlimited/PartsUnlimited/PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/obj/Release/Package/PackageTmp
