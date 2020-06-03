@@ -6,15 +6,17 @@ jobs:
   build:
     runs-on: [windows-latest]
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Setup MSBuild
-        uses: warrenbuckley/Setup-MSBuild@v1
-     
-     
+      - name: Setup NuGet.exe for use with actions
+        uses: NuGet/setup-nuget@v1.0.2
+      - run: nuget restore
+        working-directory: PartsUnlimited-aspnet45
+      - name: create staging
+        run: mkdir stagingdir
       - name: BuildApp
-        working-directory: PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite
         run: |
-          dir
-          msbuild PartsUnlimitedWebsite.csproj /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true 
-          dir
+          msbuild PartsUnlimited-aspnet45/PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation=stagingdir
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: drop
+          path: stagingdir
