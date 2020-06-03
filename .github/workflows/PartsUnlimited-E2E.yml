@@ -36,9 +36,11 @@ jobs:
         with:
           name: drop
           path: ${{github.workspace}}
-      - uses: montudor/action-zip@v0.1.0
-        with:
-         args: unzip -qq PartsUnlimitedWebsite.zip -d ./webapp
+      - run: expand-archive -path 'PartsUnlimitedWebsite.zip' -destinationpath '.\webapp'
+        shell: pwsh
+#      - uses: montudor/action-zip@v0.1.0
+#        with:
+#         args: unzip -qq PartsUnlimitedWebsite.zip -d ./webapp
       - name: Azure WebApp
         uses: Azure/webapps-deploy@v2
         with:
