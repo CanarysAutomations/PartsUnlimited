@@ -22,7 +22,7 @@ jobs:
           nuget restore PartsUnlimited.sln
       - name: BuildApp
         run: |
-          msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{env.GITHUB_WORKSPACE}}\stagingdir"
+          msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{github.workspace}}\stagingdir"
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
