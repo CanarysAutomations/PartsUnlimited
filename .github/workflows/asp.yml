@@ -6,10 +6,13 @@ jobs:
   build:
     runs-on: [windows-latest]
     steps:
-      - name: Setup NuGet.exe for use with actions
+      - name: Setup NuGet.exe
         uses: NuGet/setup-nuget@v1.0.2
-      - run: nuget restore PartsUnlimited-aspnet45\PartsUnlimited.sln
-      - name: create staging
+      - name: NuGet restore
+        run: |
+          cd PartsUnlimited-aspnet45
+          nuget restore PartsUnlimited.sln
+      - name: Create stagingdir
         run: mkdir stagingdir
       - name: BuildApp
         run: |
