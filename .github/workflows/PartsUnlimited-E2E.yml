@@ -26,6 +26,14 @@ jobs:
         with:
           name: drop
           path: stagingdir
-#  deploy:
-#    name: DEPLOY TO AZURE APP SERVICES
-#    runs-on: windows-latest
+  deploy:
+    name: DEPLOY TO AZURE APP SERVICES
+    runs-on: windows-latest
+    needs: [build]
+    steps:
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: drop
+          path: ${{github.workspace}}
+      - run: dir
