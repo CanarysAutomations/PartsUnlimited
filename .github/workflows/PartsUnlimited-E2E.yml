@@ -11,16 +11,19 @@ jobs:
         uses: actions/checkout@v2.2.0
       - name: Setup NuGet.exe
         uses: NuGet/setup-nuget@v1.0.2
-      - name: Setup MSbuild
-        uses: microsoft/setup-msbuild@v1
-        with:
-          vs-version: 16.4
+   #   - name: Setup MSbuild
+   #     uses: microsoft/setup-msbuild@v1
+   #     with:
+  #        vs-version: 16.4
       - name: NuGet restore
-        run: nuget restore PartsUnlimited.sln
+        run: nuget restore
         working-directory: PartsUnlimited-aspnet45
       - name: BuildApp
         run: |
-          msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{github.workspace}}\stagingdir"
+          dotnet build --configuration Release
+          dotnet publish -c Release -o '${{github.workspace}}\stagingdir
+        working-directory: PartsUnlimited-aspnet45
+#          msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="${{github.workspace}}\stagingdir"
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -41,4 +44,3 @@ jobs:
         with:
           app-name: pulgithub
           publish-profile: ${{secrets.pulpublishsettings}}
-          package: PartsUnlimitedWebsite.zip
