@@ -18,8 +18,6 @@ jobs:
         run: |
           cd PartsUnlimited-aspnet45
           nuget restore PartsUnlimited.sln
-      - name: Create stagingdir
-        run: mkdir stagingdir
       - name: BuildApp
         run: |
           msbuild PartsUnlimited-aspnet45\PartsUnlimited.sln /p:Configuration=Release /p:Platform='Any CPU' /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$workspace\stagingdir"
@@ -29,4 +27,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: drop
-          path: stagingdir
+          path: $workspace\stagingdir
+        env:
+          workspace: GITHUB_WORKSPACE
