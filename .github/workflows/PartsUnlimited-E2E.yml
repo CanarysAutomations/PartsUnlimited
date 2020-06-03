@@ -36,4 +36,9 @@ jobs:
         with:
           name: drop
           path: ${{github.workspace}}
-      - run: dir
+      - name: Azure WebApp
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: pulgithub
+          publish-profile: ${{secrets.pulpublishsettings}}
+          package: PartsUnlimitedWebsite.zip
