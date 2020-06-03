@@ -14,6 +14,9 @@ jobs:
         uses: microsoft/setup-msbuild@v1
         with:
           vs-version: 16.4
+      - run: |
+          cd {{env:GITHUB_WORKSPACE}}
+          mkdir stagingdir
       - name: NuGet restore
         run: |
           cd PartsUnlimited-aspnet45
