@@ -44,4 +44,4 @@ jobs:
         with:
           app-name: pulgithub
           publish-profile: ${{secrets.pulpublishsettings}}
-          package: webapp
+          package: PartsUnlimitedWebsite.zip
