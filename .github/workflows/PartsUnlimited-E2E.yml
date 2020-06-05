@@ -1,12 +1,22 @@
 name: End2End Workflow
 
+# Prerequisities:
+# -----------------
+# Create Azure Web App (ASP.NET v4.7) and provide the publish profile in secrets with name WEB_APP_PUBLISH_PROFILE.
+# Create SQL Server & DB on Azure and add the connection string on configuration section of Azure Web App.
+# Name the connection string as DefaultConnectionString (Need not update in Web.config).
+# Enable "Allow Azure services and resources to access this server" in Firewalls section of SQL Server.
+# Add Application Settings on app service with same name in Web.config. Refer Web.config.
+# Change the variable values in env section if required.
+
 on: 
   push: 
     branches: [master]
 
 env:
   SLN_FILE: PartsUnlimited.sln
-  PACKAGE_TEMP_PATH: Content\D_C\a\PartsUnlimited\PartsUnlimited\src\PartsUnlimitedWebsite\obj\Release\Package\PackageTmp
+  #Provide path of the site inside drop generated after build job as PACKAGE_TEMP_PATH
+  PACKAGE_TEMP_PATH: Content\D_C\a\PartsUnlimited\PartsUnlimited\src\PartsUnlimitedWebsite\obj\Release\Package\PackageTmp  
   WEB_APP_NAME: pulgithub
 
 jobs:
