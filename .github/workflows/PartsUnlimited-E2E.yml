@@ -39,7 +39,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: drop
-          path: stagingdir
+          path: $WORKPACEDIR\stagingdir
+        env:
+          WORKSPACEDIR: ${{github.workspace}}
   deploy:
     name: DEPLOY TO AZURE WEB APP
     runs-on: windows-latest
