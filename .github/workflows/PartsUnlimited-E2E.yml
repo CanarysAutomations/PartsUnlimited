@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: drop
-          path: $WORKPACEDIR\stagingdir
+          path: $WORKSPACEDIR\stagingdir
         env:
           WORKSPACEDIR: ${{github.workspace}}
   deploy:
