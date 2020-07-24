@@ -16,9 +16,8 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
     - name: NuGet Pack
       run: |
-        nuget pack MyPackages\SampleClassLib\SampleLib\SampleLib.csproj -OutFile ${{github.workspace}}\MyPackages
-        nuget pack MyPackages\SamplePkg\SamplePkg.nuspec -OutFile ${{github.workspace}}\MyPackages
-
+        nuget pack MyPackages\SampleClassLib\SampleLib\SampleLib.csproj -OutputDirectory ${{github.workspace}}\MyPackages
+        nuget pack MyPackages\SamplePkg\SamplePkg.nuspec -OutputDirectory ${{github.workspace}}\MyPackages
     - name: Publish Packages
       run: |
         nuget sources add -Name ghpackages -Source https://nuget.pkg.github.com/OWNER/index.json -username Grenston -password ${{secrets.GITHUB_TOKEN}}
