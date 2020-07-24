@@ -3,6 +3,9 @@ name: BUILD VALIDATION
 on:
   pull_request:
     branches: [ master ]
+    paths-ignore: 
+      - MyPackages/**
+      - .github/**
 env:
   SLN_FILE: PartsUnlimited.sln
 
