@@ -19,7 +19,7 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
     - name: NuGet Pack
       run: |
-        dotnet build MyPackages\SampleClassLib\*.sln
+        dotnet build MyPackages\SampleClassLib\SampleLib.sln
         nuget pack MyPackages\SampleClassLib\SampleLib\SampleLib.csproj -OutputDirectory ${{github.workspace}}\MyPackages
         nuget pack MyPackages\SamplePkg\SamplePkg.nuspec -OutputDirectory ${{github.workspace}}\MyPackages
     - name: Publish Packages
