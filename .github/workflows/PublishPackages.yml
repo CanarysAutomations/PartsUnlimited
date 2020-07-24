@@ -19,9 +19,8 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
     - name: NuGet Pack
       run: |
-        dotnet build MyPackages\SampleClassLib\SampleLib.sln
-        nuget pack MyPackages\SampleClassLib\SampleLib\SampleLib.csproj -OutputDirectory ${{github.workspace}}\MyPackages
-        nuget pack MyPackages\SamplePkg\SamplePkg.nuspec -OutputDirectory ${{github.workspace}}\MyPackages
+        dotnet pack MyPackages/SampleClassLib/SampleLib.slnSampleLib.sln --configuration Release --output MyPackages
+        nuget pack MyPackages/SamplePkg/SamplePkg.nuspec
     - name: Publish Packages
       run: |
         nuget sources add -Name ghpackages -Source https://nuget.pkg.github.com/CanarysPlayground/index.json -username Grenston -password ${{secrets.GITHUB_TOKEN}}
