@@ -7,7 +7,6 @@ on:
     branches: [ master ]
     paths: 
       - MyPackages/**
-      - .github/**
  
 jobs:
   PUBLISH_PACKAGES:
@@ -24,4 +23,3 @@ jobs:
     - name: Publish Packages
       run: |
         nuget push MyPackages\*.nupkg -Source github -ApiKey gh -SkipDuplicate
-        echo "h"
