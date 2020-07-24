@@ -4,9 +4,8 @@ name: PUBLISH_PACKAGES
 
 on:
   push:
-    branches: [ test ]
-    paths: 
-      - MyPackages/**
+    branches: [ master ]
+ 
 jobs:
   PUBLISH_PACKAGES:
     runs-on: windows-latest
@@ -22,4 +21,5 @@ jobs:
 
     - name: Publish Packages
       run: |
-        nuget push MyPackages\*.nupkg -Source -ApiKey gh -SkipDuplicate
+        nuget sources add -Name ghpackages -Source https://nuget.pkg.github.com/OWNER/index.json -username Grenston -password ${{secrets.GITHUB_TOKEN}}
+        nuget push MyPackages\*.nupkg -Source ghpackages -ApiKey gh -SkipDuplicate
