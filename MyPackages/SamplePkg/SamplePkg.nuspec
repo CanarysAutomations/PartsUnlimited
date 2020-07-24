@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package>
+  <metadata>
+    <id>SamplePkg</id>
+    <version>1.0.0</version>
+    <title>SamplePkg</title>
+    <authors>Canarys Automation Pvt. Ltd.</authors>
+    <owners>Grenston George</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A sample package to showcase GH packages</description>
+    <releaseNotes>Initial 1.0.0 release</releaseNotes>
+    <copyright>Copyright 2020 Canarys Automation Pvt. Ltd.</copyright>
+    <tags>sample nuget</tags>
+	<repository type="git" url="https://github.com/CanarysPlayground/PartsUnlimited.git" />
+    <dependencies>
+      <dependency id="bootstrap" version="4.1.1" />
+      <dependency id="FontAwesome" version="4.7.0" />
+    </dependencies>
+    <summary>This package is used only for GH packages demo and does nothing</summary>
+  </metadata>
+</package>
