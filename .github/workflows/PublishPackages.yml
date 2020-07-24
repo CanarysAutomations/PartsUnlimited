@@ -19,8 +19,8 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
     - name: NuGet Pack
       run: |
-        dotnet pack MyPackages/SampleClassLib/SampleLib.slnSampleLib.sln --configuration Release --output MyPackages
-        nuget pack MyPackages/SamplePkg/SamplePkg.nuspec
+        dotnet pack MyPackages\SampleClassLib\SampleLib.sln --output MyPackages
+        nuget pack MyPackages\SamplePkg\SamplePkg.nuspec -OutputDirectory MyPackages
     - name: Publish Packages
       run: |
         nuget push MyPackages\*.nupkg -Source github -ApiKey gh -SkipDuplicate
