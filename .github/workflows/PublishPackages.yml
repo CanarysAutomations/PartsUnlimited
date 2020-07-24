@@ -7,6 +7,7 @@ on:
     branches: [ master ]
     paths: 
       - MyPackages/**
+      - .github/**
  
 jobs:
   PUBLISH_PACKAGES:
@@ -18,9 +19,8 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
     - name: NuGet Pack
       run: |
-        nuget pack MyPackages\SampleClassLib\SampleLib\SampleLib.csproj -OutputDirectory ${{github.workspace}}\MyPackages
-        nuget pack MyPackages\SamplePkg\SamplePkg.nuspec -OutputDirectory ${{github.workspace}}\MyPackages
+        dotnet pack MyPackages/SampleClassLib/SampleLib.slnSampleLib.sln --configuration Release --output MyPackages
+        nuget pack MyPackages/SamplePkg/SamplePkg.nuspec
     - name: Publish Packages
       run: |
-        nuget sources add -Name ghpackages -Source https://nuget.pkg.github.com/OWNER/index.json -username Grenston -password ${{secrets.GITHUB_TOKEN}}
-        nuget push MyPackages\*.nupkg -Source ghpackages -ApiKey gh -SkipDuplicate
+        nuget push MyPackages\*.nupkg -Source github -ApiKey gh -SkipDuplicate
