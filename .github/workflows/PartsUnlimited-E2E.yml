@@ -12,6 +12,9 @@ name: End2End Workflow
 on: 
   push: 
     branches: [master]
+    paths-ignore: 
+      - MyPackages/**
+      - .github/**
 
 env:
   SLN_FILE: PartsUnlimited.sln
