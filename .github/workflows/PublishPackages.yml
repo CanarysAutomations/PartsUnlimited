@@ -24,5 +24,5 @@ jobs:
         nuget pack MyPackages\SamplePkg\SamplePkg.nuspec -OutputDirectory ${{github.workspace}}\MyPackages
     - name: Publish Packages
       run: |
-        nuget sources add -Name ghpackages -Source https://nuget.pkg.github.com/OWNER/index.json -username Grenston -password ${{secrets.GITHUB_TOKEN}}
+        nuget sources add -Name ghpackages -Source https://nuget.pkg.github.com/CanarysPlayground/index.json -username Grenston -password ${{secrets.GITHUB_TOKEN}}
         nuget push MyPackages\*.nupkg -Source ghpackages -ApiKey gh -SkipDuplicate
