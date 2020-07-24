@@ -24,3 +24,4 @@ jobs:
     - name: Publish Packages
       run: |
         nuget push MyPackages\*.nupkg -Source github -ApiKey gh -SkipDuplicate
+        echo "h"
