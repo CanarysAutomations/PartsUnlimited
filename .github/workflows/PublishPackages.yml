@@ -5,6 +5,8 @@ name: PUBLISH_PACKAGES
 on:
   push:
     branches: [ master ]
+    paths: 
+      - MyPackages/**
  
 jobs:
   PUBLISH_PACKAGES:
