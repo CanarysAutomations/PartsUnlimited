@@ -2,13 +2,13 @@
 <package>
   <metadata>
     <id>SamplePkg</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>SamplePkg</title>
     <authors>Canarys Automation Pvt. Ltd.</authors>
     <owners>Grenston George</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A sample package to showcase GH packages</description>
-    <releaseNotes>Initial 1.0.0 release</releaseNotes>
+    <releaseNotes>Second patch 1.0.1 release</releaseNotes>
     <copyright>Copyright 2020 Canarys Automation Pvt. Ltd.</copyright>
     <tags>sample nuget</tags>
 	<repository type="git" url="https://github.com/CanarysPlayground/PartsUnlimited.git" />
