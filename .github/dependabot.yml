@@ -17,5 +17,6 @@ updates:
     schedule:
       interval: "daily"
     ignore:
-    - dependency-type: all
+    - dependency-name: "bootstrap"
+    - dependency-name: "FontAwesome"
 
