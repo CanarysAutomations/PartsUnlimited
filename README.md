@@ -3,6 +3,10 @@
 Parts Unlimited is an example eCommerce website site based for training purposes on the website described in chapters 31-35 of The Phoenix Project, by Gene Kim, Kevin Behr and George Spafford, © 2013 IT Revolution Press LLC, Portland, OR. Resemblance to “Project Unicorn” in the novel is intentional; resemblance to any real company is purely coincidental.
 
 To read more about this project, please view the [Getting Started docs](docs/GettingStarted.md). The website includes product listings by category, product details, shopping cart, order history, product recommendations, search, and more.  To get started learning about building and managing the site, visit the Parts Unlimited docs for hands-on labs. 
+## Azure Boards Status
+
+[![Board Status](https://dev.azure.com/grensdevops/ef23d94d-8cee-4810-9b1d-ac44f6cd1d98/b57bdb9c-7b9e-487e-9c43-10497121a163/_apis/work/boardbadge/1b6cf46c-4a64-4d0b-ad95-e4e0675ee2d7?columnOptions=1)](https://dev.azure.com/grensdevops/ef23d94d-8cee-4810-9b1d-ac44f6cd1d98/_boards/board/t/b57bdb9c-7b9e-487e-9c43-10497121a163/Microsoft.RequirementCategory/)
+
 
 ## Key Features
 - Works with Visual Studio 2013 Update 4 (other versions may work but not tested)
