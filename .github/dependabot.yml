@@ -16,7 +16,7 @@ updates:
     directory: "/MyPackages/SampleClassLib/SampleLib/"
     schedule:
       interval: "daily"
-    allow:
+    ignore:
     - dependency-name: "bootstrap"
     - dependency-name: "FontAwesome"
 
