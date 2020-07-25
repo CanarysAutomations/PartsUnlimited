@@ -7,9 +7,7 @@ on:
     branches: [ master ]
     paths: 
       - MyPackages/**
-    paths-ignore:
-      - /**
- 
+
 jobs:
   PUBLISH_PACKAGES:
     runs-on: windows-latest
