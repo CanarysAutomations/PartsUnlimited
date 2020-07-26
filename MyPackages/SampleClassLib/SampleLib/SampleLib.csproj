@@ -10,7 +10,7 @@
     <Description>A Sample class library with one string variable defined</Description>
     <Copyright>Copyright 2020 Canarys Automation Pvt. Ltd.</Copyright>
     <PackageTags>sample nuget donet</PackageTags>
-    <Version>1.1.1</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
 </Project>
