@@ -28,3 +28,6 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- publish: $(build.artifactStagingDirectory)
+  artifact: partsunlimited_$(build.buildID)
