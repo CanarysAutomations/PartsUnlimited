@@ -20,7 +20,7 @@ env:
   SLN_FILE: PartsUnlimited.sln
   #Provide path of the site inside drop generated after build job as PACKAGE_TEMP_PATH
   PACKAGE_TEMP_PATH: Content\D_C\a\PartsUnlimited\PartsUnlimited\src\PartsUnlimitedWebsite\obj\Release\Package\PackageTmp
-  WEB_APP_NAME: partsunlimitedgh
+  WEB_APP_NAME: partsunlimitted
 
 jobs:
   build:
