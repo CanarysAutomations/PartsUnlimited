@@ -11,8 +11,8 @@ name: End2End Workflow
 
 on:
   push:
-    branches:
-      - master
+    branches-ignore:
+      - '**'
     paths-ignore:
       - MyPackages/**
       
