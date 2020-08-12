@@ -15,7 +15,6 @@ on:
       - master
     paths-ignore:
       - MyPackages/**
-      - /**
       
 env:
   SLN_FILE: PartsUnlimited.sln
