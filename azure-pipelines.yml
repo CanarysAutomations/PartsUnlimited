@@ -1,16 +1,18 @@
+trigger: none
+pr: none
 
-trigger:
-  branches:
-    include:
-      - master
-  paths:
-    exclude:
-      - MyPackages
+# trigger:
+#   branches:
+#     include:
+#       - master
+#   paths:
+#    exclude:
+#      - MyPackages
 
-pr:
-  branches:
-    exclude:
-      - master
+# pr:
+#   branches:
+#     exclude:
+#       - master
 pool:
   vmImage: 'windows-latest'
 
