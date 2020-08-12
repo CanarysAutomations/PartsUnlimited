@@ -1,6 +1,11 @@
 
 trigger:
-- master
+  branches:
+    include:
+      - master
+  paths:
+    exclude:
+      - MyPackages/**
 
 pr:
   branches:
