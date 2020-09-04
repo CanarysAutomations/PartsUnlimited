@@ -21,11 +21,11 @@ jobs:
             format: markdown
             filename: 'out/dashboard.md'
           sections:
-          - title: 'Pull Requests'
+          - title: 'Issues'
             widgets:
             - type: 'table'
-              title: 'New Pull Requests (This Week)'
-              issue_query: 'repo:CanarysPlayground/PartsUnlimited is:open is:issue created:>{{ date("-7 days") }} sort:created-asc'
+              title: 'All Issues'
+              issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue'
         token: ${{ github.token }}
     - name: Publish Documentation
       run: |
