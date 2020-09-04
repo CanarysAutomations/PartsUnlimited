@@ -21,8 +21,8 @@ jobs:
             An example of a custom generated dashboard
             for Parts Unlimited.  
           output:
-            format: html
-            filename: 'out/index.html'
+            format: markdown
+            filename: 'out/dashboard.md'
           sections:
           - title: 'List all Issues'
             description: 'Displays every issue as table'
