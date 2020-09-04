@@ -28,18 +28,20 @@ jobs:
             - title: 'All Issues'
               type: 'table'
               issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue'
-          - widgets:
+          - title: 'Issues by type'
+            description: 'Shows issues by type'  
+            widgets:
             - type: 'graph'
-              title: 'Issue by Type'
+              title: 'Type'
               elements:
               - title: 'Bug'
-                issue_querry: 'repo:CanarysPlayground/PartsUnlimited is:issue label:bug'
+                issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue label:bug'
                 colour: 'red'
               - title: 'Enhancement'
-                issue_querry: 'repo:CanarysPlayground/PartsUnlimited is:issue label:enhancement'
+                issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue label:enhancement'
                 colour: 'blue'  
               - title: 'Documentation'
-                issue_querry: 'repo:CanarysPlayground/PartsUnlimited is:issue label:documentation'
+                issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue label:documentation'
                 colour: 'green'              
         token: ${{ github.token }}
     - name: Publish Documentation
