@@ -16,6 +16,10 @@ jobs:
       uses: ethomson/issue-dashboard@v1
       with:
         config: |
+          title: DASHBOARD
+          description: |
+            An example of a custom generated dashboard
+            for Parts Unlimited.  
           output:
             format: markdown
             filename: 'out/index.md'
