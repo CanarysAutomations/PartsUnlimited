@@ -22,7 +22,7 @@ jobs:
             for Parts Unlimited.  
           output:
             format: markdown
-            filename: 'out/dashboard.md'
+            filename: 'out/index.md'
           sections:
           - title: 'List all Issues'
             description: 'Displays every issue as table'
