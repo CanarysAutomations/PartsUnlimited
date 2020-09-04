@@ -19,7 +19,7 @@ jobs:
           title: 'Dashboard'
           output:
             format: markdown
-            filename: 'dashboard.md'
+            filename: 'out/dashboard.md'
           sections:
           - title: 'Pull Requests'
             widgets:
