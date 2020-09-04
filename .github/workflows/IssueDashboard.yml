@@ -2,7 +2,7 @@ name: Issue Dashboard
 on: workflow_dispatch
 jobs:
   generate:
-    name: Generate DashBoard
+    name: Update DashBoard
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository
@@ -16,16 +16,27 @@ jobs:
       uses: ethomson/issue-dashboard@v1
       with:
         config: |
-          title: 'Dashboard'
           output:
             format: markdown
-            filename: 'out/dashboard.md'
+            filename: 'out/index.md'
           sections:
-          - title: 'Issues'
-            widgets:
-            - type: 'table'
-              title: 'All Issues'
+          - widgets:
+            - title: 'All Issues'
+              type: 'table'
               issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue'
+          - widgets:
+            - type: 'graph'
+              title: 'Issue by Type'
+              elements:
+              - title: 'Bug'
+                issue_querry: 'repo:CanarysPlayground/PartsUnlimited is:issue label:bug'
+                colour: 'red'
+              - title: 'Enhancement'
+                issue_querry: 'repo:CanarysPlayground/PartsUnlimited is:issue label:enhancement'
+                colour: 'blue'  
+               - title: 'Documentation'
+                 issue_querry: 'repo:CanarysPlayground/PartsUnlimited is:issue label:documentation'
+                 colour: 'green'              
         token: ${{ github.token }}
     - name: Publish Documentation
       run: |
