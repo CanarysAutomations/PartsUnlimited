@@ -18,17 +18,18 @@ jobs:
         config: |
           title: 'Dashboard'
           output:
-            format: html
-            filename: 'dashboard.html'
+            format: markdown
+            filename: 'dashboard.md'
           sections:
           - title: 'Pull Requests'
             widgets:
             - type: 'table'
               title: 'New Pull Requests (This Week)'
-              issue_query: 'repo:CanarysPlayground/PartsUnlimited is:open is:issue created:>{{ date("-30 days") }} sort:created-asc'
+              issue_query: 'repo:CanarysPlayground/PartsUnlimited is:open is:issue created:>{{ date("-7 days") }} sort:created-asc'
         token: ${{ github.token }}
     - name: Publish Documentation
       run: |
+        ls
         git add .
         git config user.name 'Grenston'
         git config user.email 'grenston.george@ecanarys.com'
