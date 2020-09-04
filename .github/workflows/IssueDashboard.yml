@@ -38,9 +38,9 @@ jobs:
               - title: 'Enhancement'
                 issue_querry: 'repo:CanarysPlayground/PartsUnlimited is:issue label:enhancement'
                 colour: 'blue'  
-               - title: 'Documentation'
-                 issue_querry: 'repo:CanarysPlayground/PartsUnlimited is:issue label:documentation'
-                 colour: 'green'              
+              - title: 'Documentation'
+                issue_querry: 'repo:CanarysPlayground/PartsUnlimited is:issue label:documentation'
+                colour: 'green'              
         token: ${{ github.token }}
     - name: Publish Documentation
       run: |
