@@ -1,6 +1,11 @@
 on:
   workflow-dispatch:
-
+    inputs:
+      name:
+        description: 'Person to greet'
+        default: 'World'
+        required: true
+runs-on: ubuntu-latest
 steps:
 - name: 'Generate Dashboard'
   uses: ethomson/issue-dashboard@v1
