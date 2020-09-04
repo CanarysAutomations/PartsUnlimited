@@ -1,7 +1,8 @@
+name: Issue Dashboard
 on: workflow_dispatch
-  
 jobs:
-  build:
+  generate:
+    name: Generate DashBoard
     runs-on: ubuntu-latest
     steps:
     - name: 'Generate Dashboard'
