@@ -30,8 +30,8 @@ jobs:
     - name: Publish Documentation
       run: |
         git add .
-        git config user.name 'Dashboard User'
-        git config user.email 'nobody@nowhere'
+        git config user.name 'Grenston'
+        git config user.email 'grenston.george@ecanarys.com'
         git commit -m 'Documentation update' --allow-empty
         git push origin gh-pages
       working-directory: out
