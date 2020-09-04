@@ -21,3 +21,4 @@ To read more about this project, please view the [Getting Started docs](docs/Get
 - Includes Azure RM JSON templates and PowerShell automation scripts to easily build and provision your environment
 
 **Media Elements and Templates.** You may copy and use images, clip art, animations, sounds, music, shapes, video clips and templates provided with the sample application and identified for such use in documents and projects that you create using the sample application. These use rights only apply to your use of the sample application and you may not redistribute such media otherwise.
+Hey its a sample line
