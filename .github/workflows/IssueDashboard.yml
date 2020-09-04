@@ -18,5 +18,5 @@ jobs:
             widgets:
             - type: 'table'
               title: 'New Pull Requests (This Week)'
-              issue_query: 'repo:libgit2/libgit2 is:open is:issue created:>{{ date("-30 days") }} sort:created-asc'
+              issue_query: 'repo:CanarysPlayground/PartsUnlimited is:open is:issue created:>{{ date("-30 days") }} sort:created-asc'
         token: ${{ github.token }}
