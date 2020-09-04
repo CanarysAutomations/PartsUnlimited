@@ -24,7 +24,9 @@ jobs:
             format: html
             filename: 'out/index.html'
           sections:
-          - widgets:
+          - title: 'List all Issues'
+            decription: 'Dispalys every issue as table'
+            widgets:
             - title: 'All Issues'
               type: 'table'
               issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue'
