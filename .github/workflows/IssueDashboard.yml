@@ -25,7 +25,7 @@ jobs:
             filename: 'out/index.html'
           sections:
           - title: 'List all Issues'
-            decription: 'Dispalys every issue as table'
+            description: 'Displays every issue as table'
             widgets:
             - title: 'All Issues'
               type: 'table'
