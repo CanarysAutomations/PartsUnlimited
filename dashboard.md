@@ -22,6 +22,7 @@ Displays every issue as table
 | [16](https://github.com/CanarysPlayground/PartsUnlimited/issues/16) | [Change discount logic](https://github.com/CanarysPlayground/PartsUnlimited/issues/16) |
 | [14](https://github.com/CanarysPlayground/PartsUnlimited/issues/14) | [Change the discount logic](https://github.com/CanarysPlayground/PartsUnlimited/issues/14) |
 | [11](https://github.com/CanarysPlayground/PartsUnlimited/issues/11) | [new issue AB#1012](https://github.com/CanarysPlayground/PartsUnlimited/issues/11) |
+
 ## Issues by type
 
 Shows issues by type
