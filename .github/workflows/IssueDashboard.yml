@@ -24,12 +24,6 @@ jobs:
             format: markdown
             filename: 'out/dashboard.md'
           sections:
-          - title: 'List all Issues'
-            description: 'Displays every issue as table'
-            widgets:
-            - title: 'All Issues'
-              type: 'table'
-              issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue'
           - title: 'Issues by type'
             description: 'Shows issues by type'  
             widgets:
@@ -44,7 +38,13 @@ jobs:
                 color: 'blue'  
               - title: 'Documentation'
                 issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue label:documentation'
-                color: 'green'              
+                color: 'green'     
+          - title: 'List all Issues'
+           description: 'Displays every issue as table'
+           widgets:
+           - title: 'All Issues'
+             type: 'table'
+             issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue'         
         token: ${{ github.token }}
     - name: Publish Documentation
       run: |
