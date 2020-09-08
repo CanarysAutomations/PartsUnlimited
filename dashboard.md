@@ -4,6 +4,18 @@ An example of a custom generated dashboard
 for Parts Unlimited.  
 
 
+## Issues by type
+
+Shows issues by type
+
+#### Type
+
+| Type |  | 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 |
+|:------------------------------------|-:|:-------|
+| Bug | [🔴 2](https://github.com/CanarysPlayground/PartsUnlimited/issues?q=is%3Aissue%20label%3Abug) | ██████████ |
+| Enhancement | [🔷 7](https://github.com/CanarysPlayground/PartsUnlimited/issues?q=is%3Aissue%20label%3Aenhancement) | ███████████████████████████████████ |
+| Documentation | [✅ 1](https://github.com/CanarysPlayground/PartsUnlimited/issues?q=is%3Aissue%20label%3Adocumentation) | █████ |
+
 ## List all Issues
 
 Displays every issue as table
@@ -22,16 +34,3 @@ Displays every issue as table
 | [16](https://github.com/CanarysPlayground/PartsUnlimited/issues/16) | [Change discount logic](https://github.com/CanarysPlayground/PartsUnlimited/issues/16) |
 | [14](https://github.com/CanarysPlayground/PartsUnlimited/issues/14) | [Change the discount logic](https://github.com/CanarysPlayground/PartsUnlimited/issues/14) |
 | [11](https://github.com/CanarysPlayground/PartsUnlimited/issues/11) | [new issue AB#1012](https://github.com/CanarysPlayground/PartsUnlimited/issues/11) |
-
-## Issues by type
-
-Shows issues by type
-
-#### Type
-
-| Type |  | 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 |
-|:------------------------------------|-:|:-------|
-| Bug | [🔴 2](https://github.com/CanarysPlayground/PartsUnlimited/issues?q=is%3Aissue%20label%3Abug) | ██████████ |
-| Enhancement | [🔷 7](https://github.com/CanarysPlayground/PartsUnlimited/issues?q=is%3Aissue%20label%3Aenhancement) | ███████████████████████████████████ |
-| Documentation | [✅ 1](https://github.com/CanarysPlayground/PartsUnlimited/issues?q=is%3Aissue%20label%3Adocumentation) | █████ |
-
