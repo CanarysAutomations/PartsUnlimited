@@ -40,11 +40,11 @@ jobs:
                 issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue label:documentation'
                 color: 'green'     
           - title: 'List all Issues'
-           description: 'Displays every issue as table'
-           widgets:
-           - title: 'All Issues'
-             type: 'table'
-             issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue'         
+            description: 'Displays every issue as table'
+            widgets:
+            - title: 'All Issues'
+              type: 'table'
+              issue_query: 'repo:CanarysPlayground/PartsUnlimited is:issue'         
         token: ${{ github.token }}
     - name: Publish Documentation
       run: |
