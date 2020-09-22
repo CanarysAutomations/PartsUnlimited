@@ -10,13 +10,7 @@ name: End2End Workflow
 # Change the variable values in env section if required.
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - MyPackages/**
-      
+  workflow_dispatch:   
 env:
   SLN_FILE: PartsUnlimited.sln
   #Provide path of the site inside drop generated after build job as PACKAGE_TEMP_PATH
